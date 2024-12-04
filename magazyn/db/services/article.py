@@ -1,5 +1,4 @@
 from fastapi import Depends
-from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
 from sqlalchemy import select, insert
 from sqlalchemy.exc import NoResultFound
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -21,9 +20,8 @@ class ArticleService:
         try:
             orm_article = (await self.session.execute(query)).scalar_one()
         except NoResultFound:
-            return
+            return None
         return Article(
-            id=orm_article.id,
             title=orm_article.title,
             slug=orm_article.slug,
             content=orm_article.content,

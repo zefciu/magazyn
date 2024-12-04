@@ -1,0 +1,5 @@
+[tool.mypy]
+plugins=[
+        'sqlalchemy.ext.mypy.plugin'
+]
+disallow_untyped_defs=true

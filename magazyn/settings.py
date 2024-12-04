@@ -15,6 +15,7 @@ class SettingsModel(BaseModel):
 
     db_url: str
 
+
 @lru_cache
 def get_settings() -> SettingsModel:
     with open(CONFIG_FILE_NAME, "r") as f:
