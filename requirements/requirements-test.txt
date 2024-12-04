@@ -4,3 +4,8 @@ pycodestyle==2.12.1
 pyflakes==3.2.0
 SQLAlchemy[mypy]==2.0.36
 types-pyYaml==6.0.12.20240917
+iniconfig==2.0.0
+packaging==24.2
+pluggy==1.5.0
+pytest==8.3.4
+pytest-asyncio==0.24.0
