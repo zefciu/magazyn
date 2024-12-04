@@ -1,0 +1,3 @@
+---
+# Without protocol, as the protocol will be added depending on needs
+db_url: "user:pass@host/db_name"
