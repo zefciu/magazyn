@@ -6,6 +6,7 @@ from magazyn.db.models.article import Article as OrmArticle
 
 from magazyn.api.models.article import Article
 from magazyn.db.session import get_session
+from magazyn.types.articles import AbstractArticle
 
 
 class ArticleService:
@@ -27,7 +28,7 @@ class ArticleService:
             content=orm_article.content,
         )
 
-    async def create_article(self, article_data: Article) -> None:
+    async def create_article(self, article_data: AbstractArticle) -> None:
         query = insert(OrmArticle)
         await self.session.execute(query, {
             "title": article_data.title,
